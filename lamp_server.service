@@ -1,0 +1,12 @@
+[Unit]
+Description=Lamp Server
+After=network.target
+Requires=pigpiod.service
+
+[Service]
+Environment="BASE_DIR=/home/pi/Documents/lamp_server"
+ExecStart=/bin/bash -c '${BASE_DIR}/venv/bin/python3 ${BASE_DIR}/lamp_server.py'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

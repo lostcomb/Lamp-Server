@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Lamp Switch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <style type="text/css">
+      html {
+        font-family: sans-serif;
+        color: #F2A35E;
+        background-color: #024059;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+      }
+      div {
+        width: 100%;
+        max-width: 672px;
+        text-align: center;
+      }
+      span {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      h1 {
+        margin: 16px;
+        flex-grow: 1;
+        text-align: left;
+      }
+      form {margin: 16px;}
+      img {
+        width: 100%;
+        max-width: 640px;
+      }
+      input {
+        -webkit-appearance: none;
+        border: none;
+        border-radius: 0;
+        padding: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #024059;
+        background-color: #F2A35E;
+      }
+      input:hover {background-color: #f2a35ecc;}
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>
+        <h1>Lamp Switch</h1>
+        <form action="{{ url_for('toggle_switch') }}" method="post">
+          <input type="submit" value="Toggle"/>
+        </form>
+      </span>
+      <img src="{{ url_for('video_feed') }}">
+    </div>
+  </body>
+</html>
